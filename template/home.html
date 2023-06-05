@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
   <title>My Website</title>
 </head>
 <style>
@@ -24,22 +29,26 @@
   }
 
   .nav-link {
-    color:  #04395d;
+    color: #04395d;
     transition: color 0.3s;
     border-right: 1px solid rgb(255, 255, 255);
     font-weight: bold;
     font-size: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
   .nav-link:hover {
     color: #ffc107;
     transform: scale(1.1);
   }
+
   .dropdown-menu .dropdown-item:hover {
-    background-color:  #013456; /* Set the desired hover background color */
-    color: #fff; /* Set the desired hover text color */
+    background-color: #013456;
+    /* Set the desired hover background color */
+    color: #fff;
+    /* Set the desired hover text color */
   }
+
   /* Animation */
   @keyframes fadeIn {
     from {
@@ -55,7 +64,7 @@
 
   .nav-item {
     animation: fadeIn 0.5s ease-in-out;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
 
@@ -70,13 +79,14 @@
     transform: rotate(360deg);
     /* Example animation, modify as desired */
   }
+
   .banner {
     background-image: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 0, 150, 0)), url("static/image/santhosh.jpg");
     background-size: cover;
     padding: 10% 5%;
     height: 700px;
   }
-  
+
 
   .banner-text {
     color: #ffffff;
@@ -84,12 +94,13 @@
     margin: 0 auto;
     margin-left: 10px;
   }
-  
+
   .banner-heading {
     font-weight: 700;
     margin-bottom: -10px;
     padding: 10px;
   }
+
   /* Styling for the button */
   .contact-button {
     background-color: #07819cc7;
@@ -109,59 +120,478 @@
 
   /* Keyframes for the animation */
   @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-    100% { transform: translateX(0); }
+    0% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translateX(-10px);
+    }
+
+    75% {
+      transform: translateX(10px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
   }
 
-  
+  .heading {
+    text-align: center;
+    font-size: 40px;
+    color: #545151;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: background-color 0.9s ease;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2px;
+    position: relative;
+    font-weight: 900;
+  }
+
+  .heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #666804;
+    /* Underline color */
+    transition: transform 0.3s ease;
+    /* Underline animation transition */
+    transform-origin: center;
+    transform: scaleX(0);
+    /* Initial underline width */
+  }
+
+  .heading:hover::after {
+    transform: scaleX(0.5);
+    /* Final underline width on hover */
+  }
+
+  .heading1 {
+    text-align: center;
+    font-size: 40px;
+    color: #545151;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: background-color 0.9s ease;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2px;
+    position: relative;
+    font-weight: 900;
+  }
+
+  .heading1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #666804;
+    /* Underline color */
+    transition: transform 0.3s ease;
+    /* Underline animation transition */
+    transform-origin: center;
+    transform: scaleX(0);
+    /* Initial underline width */
+  }
+
+  .heading1:hover::after {
+    transform: scaleX(0.5);
+    /* Final underline width on hover */
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  .card {
+    width: 400px;
+    height: 300px;
+    margin: 0 10px;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .card:hover .card-content {
+    transform: rotateY(180deg);
+  }
+
+  .card-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+  }
+
+  .card-front {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 20px;
+  }
+
+  .card-back {
+    background-color: #f8f8f8;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    border-radius: 20px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .image-container img {
+    width: 300px;
+    height: 170px;
+    margin: 0 10px;
+    border-radius: 10px;
+  }
+
+  .image-container {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .card1 {
+    flex: 0 0 33.33%;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.5s ease;
+  }
+
+  .card1:hover {
+    transform: scale(1.05);
+  }
+
+  .card1 img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .card1-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .apply-now-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .apply-now-button:hover {
+    background-color: #45a049;
+  }
+
+  @media screen and (max-width: 768px) {
+    .card {
+      flex: 0 0 50%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .card {
+      flex: 0 0 100%;
+    }
+  }
+
+  .card2 {
+    display: inline-block;
+    width: 500px;
+    padding: 10px;
+    margin-left: 150px;
+    margin-right: 70px;
+  }
+
+  .card2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .card2 .heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .card2 .description {
+    margin-top: 5px;
+  }
+
+  .slider-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    transition: transform 0.5s;
+  }
+
+  .customer {
+    width: 500px;
+    padding: 20px;
+  }
+
+  .customer img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  .customer h3 {
+    margin-top: 10px;
+  }
+
+  .rating {
+    margin-bottom: 10px;
+  }
+
+  .rating .star {
+    color: gold;
+  }
+
+  .slider-controls {
+    margin-top: 20px;
+  }
+
+  .slider-controls button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .prev-btn {
+    float: left;
+  }
+
+  .next-btn {
+    float: right;
+  }
+
+  @media screen and (max-width:768px) {
+    .body {
+      width: 1117px !important;
+    }
+    .nav-link{
+      font-size: 55px !important;
+    }
+
+    .nav1 {
+      width: 1117px !important;
+      height: 110px !important;
+      font-size: 37px !important;
+    }
+
+    .logo {
+      width: 300px;
+      height: 400px;
+    }
+
+    .banner {
+      width: 1117px !important;
+      height: 700px !important;
+    }
+
+    .banner-heading {
+      font-size: 35px !important;
+    }
+
+    .ban1 {
+      font-size: 25px;
+    }
+
+    .query {
+      width: 1117px !important;
+      height: 200px !important;
+      text-align: initial !important;
+    }
+
+    .heading1 {
+      width: 1117px;
+      font-size: 60px;
+    }
+
+    .card-container {
+      display: block !important;
+    }
+
+    .image-container {
+      display: flex !important;
+      width: 1117px;
+    }
+
+    .aboutus {
+      font-size: 32px !important;
+      width: 1117px !important;
+    }
+
+    .card {
+      width: 905px !important;
+      height: 522px !important;
+      margin: 30px 10px 0px 100px;
+    }
+
+    .select {
+      font-size: 30px !important;
+      width: 1117px;
+    }
+
+    .card2 .heading {
+      font-size: 63px !important;
+    }
+
+    .card2 {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      width: 1117px !important;
+    }
+
+    .card2 .description {
+      font-size: 35px !important;
+      text-align: center !important;
+    }
+
+    .heading {
+      font-size: 60px;
+    }
+
+    .slider {
+      display: block !important;
+      overflow: inherit !important;
+    }
+
+    .customer {
+      width: 1117px !important;
+    }
+
+    .customer img {
+      width: 300px !important;
+      height: 300px !important;
+    }
+
+    .customer h3 {
+      font-size: 35px !important;
+    }
+
+    .rating {
+      font-size: 45px;
+    }
+
+    .rat {
+      font-size: 32px !important;
+    }
+
+    .container1 {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      width: 1117px !important;
+    }
+    .row{
+      font-size: 30px;
+    }
+    .dropdown-item{
+      font-size: 50px !important;
+    }
+
+  }
 </style>
 
-<body>
-  <h2 style="background-color: #013456; color: #ffffff; height: 50px; font-size: 16px; text-align: center; padding: 15px;font-weight:400;">
-    <i class="fas fa-address-card"></i> &nbsp; 1st Floor,Karimattom Plaza, Nagampadam, Kottayam, Kerala &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<body class="body">
+  <h2 class="nav1"
+    style="background-color: #013456; color: #ffffff; height: 50px; font-size: 16px; text-align: center; padding: 15px;font-weight:400;">
+    <i class="fas fa-address-card"></i> &nbsp; 1st Floor,ABC plaza, xyz, america, usa &nbsp;
+    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
     <i class="fas fa-hourglass-half"></i> &nbsp; 09 am - 5 pm &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-    <i class="fab fa-whatsapp"></i> &nbsp; +91 9605254321 &nbsp; &nbsp;
+    <i class="fab fa-whatsapp"></i> &nbsp; +025522255 &nbsp; &nbsp;
   </h2>
-  
-    <nav class="navbar navbar-expand-lg">
+
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="static/image/logo1.png" alt="Logo" class="logo">
+        <img class="logo" src="static/image/logo1.png" alt="Logo" class="logo">
       </a>
       <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-  
-      <div class="collapse navbar-collapse" id="navbarNav" >
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="background-color: #04395d; width:90px;height:80px;"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               About Us
             </a>
             <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
-              <a class="dropdown-item" href="#">About Us</a>
-              <a class="dropdown-item" href="#">Testimonials</a>
-              <a class="dropdown-item" href="#">Awards & Certifications</a>
-              <a class="dropdown-item" href="#">Presense In Media</a>
-              <a class="dropdown-item" href="#">Photo Gallery</a>
-              <a class="dropdown-item" href="#">Video Galeery</a>
-              <a class="dropdown-item" href="#">Our Blog</a>
-              <a class="dropdown-item" href="#">Branches</a>
+              <a class="dropdown-item" href="#about">About Us</a>
+              <a class="dropdown-item" href="{% url 'award' %}">Awards & Certifications</a>
+              <a class="dropdown-item" href="{% url 'presencemedia' %}">Presense In Media</a>
+              <a class="dropdown-item" href="{% url 'photogallery' %}">Photo Gallery</a>
+              <a class="dropdown-item" href="{% url 'blog' %}">Our Blog</a>
+              <a class="dropdown-item" href="{% url 'branches' %}">Branches</a>
               <!-- Add more dropdown items as needed -->
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="studyAbroadDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="studyAbroadDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Study Abroad
             </a>
             <div class="dropdown-menu" aria-labelledby="studyAbroadDropdown">
-              <a class="dropdown-item" href="#">Study In Canada</a>
+              <a class="dropdown-item" href="{% url 'canada' %}">Study In Canada</a>
               <a class="dropdown-item" href="#">Study In New Zealand</a>
               <a class="dropdown-item" href="#">Study In USA </a>
               <a class="dropdown-item" href="#">Study In Ireland</a>
@@ -182,32 +612,48 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Courses
             </a>
             <div class="dropdown-menu" aria-labelledby="coursesDropdown">
-              <a class="dropdown-item" href="#">Dropdown Item 1</a>
-              <a class="dropdown-item" href="#">Dropdown Item 2</a>
+              <a class="dropdown-item" href="{% url 'ielts' %}">IELTS</a>
+              <a class="dropdown-item" href="#">German Training</a>
+              <a class="dropdown-item" href="#">PTE</a>
+              <a class="dropdown-item" href="#">OET</a>
+              <a class="dropdown-item" href="#">TOEFL</a>
+              <a class="dropdown-item" href="#">TOLES</a>
+              <a class="dropdown-item" href="#">Spoken English</a>
+              <a class="dropdown-item" href="#">HAAD</a>
+              <a class="dropdown-item" href="#">NCLEX-RN</a>
               <!-- Add more dropdown items as needed -->
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Services
             </a>
             <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <a class="dropdown-item" href="#">Dropdown Item 1</a>
-              <a class="dropdown-item" href="#">Dropdown Item 2</a>
+              <a class="dropdown-item" href="{% url 'franchise' %}">Franchisees</a>
+              <a class="dropdown-item" href="#">Predeparture Seminar</a>
+              <a class="dropdown-item" href="#">IELTS, TOEFL, PTE & OET</a>
+              <a class="dropdown-item" href="#">Education Loan</a>
+              <a class="dropdown-item" href="#">Admission Support</a>
+              <a class="dropdown-item" href="#">Visa Assistance</a>
+              <a class="dropdown-item" href="#">Scholarship Test</a>
+              <a class="dropdown-item" href="#">Enquiry</a>
               <!-- Add more dropdown items as needed -->
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="migrationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="migrationDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Migration
             </a>
             <div class="dropdown-menu" aria-labelledby="migrationDropdown">
-              <a class="dropdown-item" href="#">Dropdown Item 1</a>
-              <a class="dropdown-item" href="#">Dropdown Item 2</a>
+              <a class="dropdown-item" href="{% url 'migratecanada' %}">Migrate To Canada</a>
+              <a class="dropdown-item" href="#">Migrate To Australia</a>
               <!-- Add more dropdown items as needed -->
             </div>
           </li>
@@ -218,129 +664,374 @@
   <div class="banner">
     <div class="banner-text">
       <h3 class="banner-heading" style="font-family: 'Arial', sans-serif; font-size: 24px;">LET YOUR DREAMS</h3>
-      <h1 class="ban" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 100px; font-weight: bold;">FLY HIGH</h1>
-      <h4 style="font-family:sans-serif;">Fly contries like canada,<br>Australia, New Zealand etc...<br>And Explor Your Higher Career</h4>
+      <h1 class="ban"
+        style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 100px; font-weight: bold;">FLY
+        HIGH</h1>
+      <h4 class="ban1" style="font-family:sans-serif;">Fly contries like canada,<br>Australia, New Zealand etc...<br>And
+        Explor Your Higher Career</h4>
     </div>
   </div>
-  <h2 style="background-color: #051018; color: #ffffff; height: 160px; text-align: center; padding: 50px; font-size: 50px;">
+  <h2 class="query"
+    style="background-color: #051018; color: #ffffff; height: 160px; text-align: center; padding: 50px; font-size: 50px;">
     For Any Queries&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button class="contact-button">Contact Now</button>
+    <button class="contact-button" >Contact Now</button>
   </h2>
-  
+  <br><br><br>
+  <div id="about" class="heading1">ABOUT US</div>
+  <p class="aboutus" style="text-align: center; font-weight: 500; font-size: 18px; color: #545151;">MEDIPOL is focused
+    and dedicated to
+    you. With 24 years experience in English language and relatively long entry into Study Abroad, <br>we understand
+    your need for international education, as well as work permit and PR requirements. We help you get started with
+    learning English the international way<br> with our various programs like IELTS, Speak smart etc. To help you
+    achieve your goals for particular universities in preferred countries we encourage you to get the required
+    <br>scores of 6.5 with a Band no less than 5.5. If you get a total average score of only 5.5 we help place you in
+    colleges and universities in New Zealand <br>where they are not too particular. On completion of your course you
+    will be eligible for a stay back option for a year or two in most countries and 3 years in Canada,<br> depending on
+    the course, after which you could apply for your PR or permanent residence.
+  </p>
+  <br><br>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-front">
+          <img src="static/image/c1.jpg" alt="Card 1" style="width: 100%; height: 100%;border-radius: 8px;">
+        </div>
+        <div class="card-back">
+          <div id="services" class="heading">Study Abroad</div>
+          <p>Fly to countries like Canada , Australia, New Zealand, etc…And explore your higher career</p>
+        </div>
+      </div>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="card">
+      <div class="card-content">
+        <div class="card-front">
+          <img src="static/image/c3.jpg" alt="Card 2" style="width: 100%; height: 100%; border-radius: 8px;">
+        </div>
+        <div class="card-back">
+          <div id="services" class="heading">Language</div>
+          <p>Our English language courses help people around the world to gain the skills, confidence, and connections
+            to realize their potential.</p>
+        </div>
+      </div>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="card">
+      <div class="card-content">
+        <div class="card-front">
+          <img src="static/image/c2.jpg" alt="Card 3" style="width: 100%; height: 100%; border-radius: 8px;">
+        </div>
+        <div class="card-back">
+          <div id="services" class="heading">Study Abroad</div>
+          <p>We choose skilled immigrants as permanent residents based on their ability to settle in Canada.</p>
+        </div>
+      </div>
+    </div>
+  </div><br><br><br>
 
-  
+
+  <div id="services" class="heading1">Our Featured Courses</div>
+  <p class="select" style="text-align: center; font-weight: 500; font-size: 18px; color:  #cdbc03;">Select your language
+    to study</p>
+  <br><br><br>
+
+  <div class="image-container">
+    <img src="static/image/44.png"
+      alt="Image 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="static/image/22.png"
+      alt="Image 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="static/image/33.png" alt="Image 3">
+  </div>
+  <br><br><br><br><br><br>
+  <div id="services" class="heading1">Other Courses</div>
+  <p class="select" style="text-align: center; font-weight: 500; font-size: 18px; color: #cdbc03;">Select your language
+    to study</p>
+  <br>
+
+  <div class="image-container">
+    <div class="card1">
+      <img src="static/image/a1.jpg" alt="Image 1">
+      <div id="services" class="heading" style="color: #076191;">TOEFL</div>
+      <div class="card1-description">Card 1 Description MEDIPOL is focused and dedicated to you. With 24 years
+        experience in English language and relatively long</div>
+      <button class="apply-now-button" id="applynow">Apply Now</button>
+    </div>
+    <div class="card1">
+      <img src="static/image/a2.jpg" alt="Image 2">
+      <div id="services" class="heading" style="color: #076191;">OET Coaching </div>
+      <div class="card1-description">Card 2 Description MEDIPOL is focused and dedicated to you. With 24 years
+        experience in English language and relatively long</div>
+      <button class="apply-now-button">Apply Now</button>
+    </div>
+    <div class="card1">
+      <img src="static/image/a3.jpg" alt="Image 3">
+      <div id="services" class="heading" style="color: #076191;">Spoken English</div>
+      <div class="card1-description">Card 3 Description MEDIPOL is focused and dedicated to you. With 24 years
+        experience in English language and relatively long</div>
+      <button class="apply-now-button">Apply Now</button>
+    </div>
+  </div><br><br>
+  <div class="image-container">
+    <div class="card1">
+      <img src="static/image/a4.jpg" alt="Image 1">
+      <div id="services" class="heading" style="color: #076191;">PTE</div>
+      <div class="card1-description">Card 1 Description MEDIPOL is focused and dedicated to you. With 24 years
+        experience in English language and relatively long</div>
+      <button class="apply-now-button">Apply Now</button>
+    </div>
+    <div class="card1">
+      <img src="static/image/a5.jpg" alt="Image 2">
+      <div id="services" class="heading" style="color: #076191;">IELTS Coaching </div>
+      <div class="card1-description">Card 2 Description MEDIPOL is focused and dedicated to you. With 24 years
+        experience in English language and relatively long</div>
+      <button class="apply-now-button">Apply Now</button>
+    </div>
+    <div class="card1">
+      <img src="static/image/a6.jpg" alt="Image 3">
+      <div id="services" class="heading" style="color: #076191;">NCLEX-RN</div>
+      <div class="card1-description">Card 3 Description MEDIPOL is focused and dedicated to you. With 24 years
+        experience in English language and relatively long</div>
+      <button class="apply-now-button">Apply Now</button>
+    </div>
+  </div><br><br><br><br><br>
+
+  <div class="card2">
+    <div class="heading" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">STUDY ABROAD
+    </div>
+    <img src="static/image/gd.jpg" alt="Card2 Image 1">
+    <div class="heading">Are you looking forward to study abroad ?</div>
+    <div class="description">Are you confused on whom to approach?
+      Choose our MEDIPOL without a second thought .
+      May you be of any stream or discipline, come to MEDIPOL get hold of your dream with your partner MEDIPOL'S</div>
+  </div>
+
+  <div class="card2">
+    <div class="heading" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">COURSES</div>
+    <img src="static/image/gds.jpg" alt="Card2 Image 2">
+    <div class="heading">MEDIPOL is an educational hub for the students who aspires to be an international scholar</div>
+    <div class="description">We offers Courses like IELTS,OET,PTE,SPOKEN ENGLISH,TOLES Etc
+      We have the top ranked faculties with the most updated curriculum for our students</div>
+  </div><br><br><br><br><br><br>
+  <div id="services" class="heading">Student Reviews</div><br>
+
+  <div class="slider-container">
+    <div class="slider">
+      <div class="customer">
+        <img src="static/image/b1.jpg" alt="Customer 1">
+        <h3>John Doe</h3>
+        <div class="rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+        </div>
+        <p class="rat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non nisi justo.</p>
+      </div>
+      <div class="customer">
+        <img src="static/image/b2.jpg" alt="Customer 2">
+        <h3>Merlin</h3>
+        <div class="rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star"></span>
+        </div>
+        <p class="rat">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+      <div class="customer">
+        <img src="static/image/b4.jpg" alt="Customer 2">
+        <h3>Danie</h3>
+        <div class="rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star"></span>
+        </div>
+        <p class="rat">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+      <div class="customer">
+        <img src="static/image/b3.jpg" alt="Customer 2">
+        <h3>Alisha</h3>
+        <div class="rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+        </div>
+        <p class="rat">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+
+      <!-- Add more customers here -->
+    </div>
+    <div class="slider-controls">
+      <button class="prev-btn">&#8249;</button>
+      <button class="next-btn">&#8250;</button>
+    </div>
+  </div>
+
+
 
 
   <br><br><br><br>
-  <div style="background-color: #384a72;;">
+  <div class="footer1" style="background-color: #384a72;;">
     <div class="container">
-      <!-- Footer -->
-      <footer class="text-center text-lg-start text-white" style="background-color: #384a72;">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-          <!-- Section: Links -->
-          <section class="">
-            <!--Grid row-->
-            <div class="row">
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold">
-                  INTER SET
-                </h6>
-                <p>
-                  We can help you achive your any needs of information.and we will 24*7 support qukly response and solve your problem with single touch.
-                </p>
-              </div>
-              <!-- Grid column -->
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-white" style="background-color: #384a72;">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Links -->
+                <section class="">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold">
+                                MEDIPOL
+                            </h6>
+                            <p>
+                                1st Floor,ABCD Plaza, Above uk Bank , Near casual medical center,
+                                XYZ, America, Uk
+                                +22565522 +000000000
+                                overseas@MEDIPOL.com </p>
+                        </div>
+                        <!-- Grid column -->
 
-              <hr class="w-100 d-md-none" />
+                        <hr class="w-100 d-md-none" />
 
-              <!-- Grid column -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-                <ul class="list-unstyled">
-                  <li>
-                    <a class="text-white">Devolope</a>
-                  </li>
-                  <li>
-                    <a class="text-white">Extract</a>
-                  </li>
-                  <li>
-                    <a class="text-white">BrandFlow</a>
-                  </li>
-                  <li>
-                    <a class="text-white">Angular</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold">Our Branches</h6>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="text-white">London : 025225452, 88888888</a>
+                                </li>
+                                <li>
+                                    <a class="text-white">Switzearland : 363333633</a>
+                                </li>
+                                <li>
+                                    <a class="text-white">Germany : 7777777777</a>
+                                </li>
+                                <li>
+                                    <a class="text-white">Poland : 333633336, 444152444</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
 
-              <hr class="w-100 d-md-none" />
+                        <hr class="w-100 d-md-none" />
 
-              <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                <ul class="list-unstyled">
-                  <li><i class="fas fa-home mr-3"></i> New York, NY 10012, US</li>
-                  <li><i class="fas fa-envelope mr-3"></i> info@gmail.com</li>
-                  <li><i class="fas fa-phone mr-3"></i> + 01 234 567 88</li>
-                  <li><i class="fas fa-print mr-3"></i> + 01 234 567 89</li>
-                </ul>
-              </div>
-              <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-home mr-3"></i> New York, NY 10012, US</li>
+                                <li><i class="fas fa-envelope mr-3"></i> medipol@gmail.com</li>
+                                <li><i class="fas fa-phone mr-3"></i> + 01 234 567 88</li>
+                                <li><i class="fas fa-print mr-3"></i> + 01 234 567 89</li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
 
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
-                <div class="d-flex justify-content-center">
-                  <!-- Facebook -->
-                  <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!"
-                    role="button"><i class="fab fa-facebook-f"></i></a>
-                  <!-- Twitter -->
-                  <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!"
-                    role="button"><i class="fab fa-twitter"></i></a>
-                  <!-- Google -->
-                  <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!"
-                    role="button"><i class="fab fa-google"></i></a>
-                  <!-- Instagram -->
-                  <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#!"
-                    role="button"><i class="fab fa-instagram"></i></a>
-                  <!-- Linkedin -->
-                  <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!"
-                    role="button"><i class="fab fa-linkedin-in"></i></a>
-                  <!-- Github -->
-                  <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"
-                    role="button"><i class="fab fa-github"></i></a>
-                </div>
-              </div>
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                            <div class="d-flex justify-content-center">
+                                <!-- Facebook -->
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;"
+                                    href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                <!-- Twitter -->
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;"
+                                    href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                                <!-- Google -->
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;"
+                                    href="#!" role="button"><i class="fab fa-google"></i></a>
+                                <!-- Instagram -->
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;"
+                                    href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                                <!-- Linkedin -->
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;"
+                                    href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+                                <!-- Github -->
+                                <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;"
+                                    href="#!" role="button"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-          </section>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-          &copy; 2020 Interset.com
-        </div>
-      </footer>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                &copy; 2020 Interset.com
+            </div>
+        </footer>
     </div><br>
-  </div>
+</div>
 
   <!-- Add the Bootstrap JS link -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('.nav-item.dropdown').hover(function() {
-      $(this).find('.dropdown-menu').stop(true, true).fadeIn(500);
-    }, function() {
-      $(this).find('.dropdown-menu').stop(true, true).fadeOut(500);
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.nav-item.dropdown').hover(function () {
+        $(this).find('.dropdown-menu').stop(true, true).fadeIn(500);
+      }, function () {
+        $(this).find('.dropdown-menu').stop(true, true).fadeOut(500);
+      });
     });
-  });
-</script>
+  </script>
   <script>
     $(document).ready(function () {
       $('.navbar-toggler').click(function () {
         $('.navbar-collapse').collapse('toggle');
       });
     });
+  </script>
+  <script>
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const slider = document.querySelector('.slider');
+
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({
+        left: -slider.offsetWidth,
+        behavior: 'smooth'
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({
+        left: slider.offsetWidth,
+        behavior: 'smooth'
+      });
+    });
+
+  </script>
+
+  <script>
+    // Function to handle smooth scrolling
+    function scrollToABOUTUS() {
+      var aboutSection = document.getElementById('about');
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Add an event listener to the Services button in the navbar
+    var aboutButton = document.querySelector('a[href="#about"]');
+    aboutButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      scrollToABOUTUS();
+    });
+  </script>
+  <script>
+    document.getElementById("applynow").onclick = function() {
+      window.location.href = "{% url 'signup' %}"; // Replace with the correct URL pattern name
+    };
   </script>
 
 </body>
